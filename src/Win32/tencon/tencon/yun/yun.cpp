@@ -125,8 +125,8 @@ cv::Mat Yun::calc_saliency(cv::Mat &src, std::vector<YunOrientation> &Vmap, int 
 	const cv::Size imSz = src.size();
 
 	cv::Mat sMap(imSz, CV_8UC1); sMap.setTo(0);
-	static const int nMax = lbSz * lbSz * 18;
-	static const int cBlock = (lbSz / 2) + 1;
+	const int nMax = lbSz * lbSz * 18;
+	const int cBlock = (lbSz / 2) + 1;
 
 	for (int h = cBlock; h < imSz.height - cBlock; h += lbSz)
 	{
