@@ -9,6 +9,6 @@ Based on the following libraries:
 * (win32) Visual studio 2013
 * (linux) CMake (>= 2.8)
 
-yon can find the paper in the "Document" section.
+yon can find the paper in the "Document" section or [here](https://www.researchgate.net/publication/321349040_VIsion-based_1D_Barcode_Localization_Method_for_Scale_and_Rotation_Invariant).
 
 Inyong Yun, Joongkyu Kim, "Vision-based 1D barcode localization method for scale and rotation invariant", Proc IEEE TENCON, pp. 2204-2208, 2017.
