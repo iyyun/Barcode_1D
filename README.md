@@ -21,4 +21,5 @@ yon can find the paper in the "Document" section or [here](https://www.researchg
   organization={IEEE}
 }
 
-# Inyong Yun, Joongkyu Kim, "Vision-based 1D barcode localization method for scale and rotation invariant", Proc IEEE TENCON, pp. 2204-2208, 2017.
+
+#Inyong Yun, Joongkyu Kim, "Vision-based 1D barcode localization method for scale and rotation invariant", Proc IEEE TENCON, pp. 2204-2208, 2017.
