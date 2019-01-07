@@ -125,7 +125,7 @@ cv::Mat Yun::calc_saliency(cv::Mat &src, std::vector<YunOrientation> &Vmap, int 
 	const cv::Size imSz = src.size();
 
 	cv::Mat sMap(imSz, CV_8UC1); sMap.setTo(0);
-	const int nMax = lbSz * lbSz * 18;
+	const int nMax = lbSz * lbSz * NUM_ANG;
 	const int cBlock = (lbSz / 2) + 1;
 
 	for (int h = cBlock; h < imSz.height - cBlock; h += lbSz)
@@ -142,7 +142,7 @@ cv::Mat Yun::calc_saliency(cv::Mat &src, std::vector<YunOrientation> &Vmap, int 
 					if (x < 0 || x >= imSz.width) continue;
 
 					uchar bin = src.at<uchar>(y, x);
-					if (bin > 18) continue;
+					if (bin >= NUM_ANG) continue;
 
 					LocalHisto[bin]++;
 				}
@@ -321,8 +321,10 @@ std::vector<YunLabel> Yun::ccl(cv::Mat &src, cv::Mat &oMap, std::vector<YunOrien
 						if (mask.at<uchar>(m, n) != 0 ||
 							src.at<uchar>(m, n) < 128) continue;
 
-						mask.at<uchar>(m, n) = label_id;
 						int bin = oMap.at<uchar>(m, n);
+						if (bin >= NUM_ANG) continue;
+
+						mask.at<uchar>(m, n) = label_id;
 						hist[bin]++;
 
 						if (push(stackx, stacky, tsize, m, n, &top) == -1) continue;
