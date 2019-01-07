@@ -20,7 +20,7 @@ Build Instructions
 
 Demo
 ----
-    $ $ cd Barcode_1D/src/Linux/tencon/build
+    $ cd Barcode_1D/src/Linux/tencon/build
     $ ./iyBarcode --file=../../tencone/Test_images/t1.jpg     
 
 
