@@ -17,6 +17,10 @@ Build Instructions
     $ cmake ..
     $ make
 
+Dataset
+-------
+you can download our dataset from [here](http://dspl.skku.ac.kr/home_course/data/barcode/skku_inyong_DB.zip) (not include ground truth labels)
+
 
 Demo
 ----
