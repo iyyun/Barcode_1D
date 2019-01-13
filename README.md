@@ -31,7 +31,7 @@ Demo
 Cite
 ----
 
-yon can find the paper in the "Document" section or [here](https://www.researchgate.net/publication/321349040_VIsion-based_1D_Barcode_Localization_Method_for_Scale_and_Rotation_Invariant).
+yon can find the paper in the "Document" section or [here](https://www.researchgate.net/publication/321349040_VIsion-based_1D_Barcode_Localization_Method_for_Scale_and_Rotation_Invariant) or [IEEEXelore](https://ieeexplore.ieee.org/document/8228227).
 
 If you use this barcode detection program, please cite the following:
 
