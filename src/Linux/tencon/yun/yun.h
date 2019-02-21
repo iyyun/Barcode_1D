@@ -67,10 +67,10 @@ namespace iy{
 	public:
 		Yun() {
 			// init value
-			pam.magT = 40;
-			pam.winSz = 20;
+			pam.magT = 30;
+			pam.winSz = 25;
 			pam.minEdgeT = 30;
-			pam.localBlockSz = 18;
+			pam.localBlockSz = 15;
 			pam.minDensityEdgeT = 0.3;
 		}
 		~Yun() {}
