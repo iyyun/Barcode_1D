@@ -27,6 +27,7 @@ Demo
     $ cd Barcode_1D/src/Linux/tencon/build
     $ ./iyBarcode --file=../../tencone/Test_images/t1.jpg     
 
+[![video](http://img.youtube.com/vi/KbB97vP3mhA/0.jpg)](https://youtu.be/KbB97vP3mhA?t=0s)
 
 Cite
 ----
