@@ -5,8 +5,10 @@ This is a barcode detection project at the digital signal processing laboratory 
 The software runs under windows and linux and is written in C++.
 
 Based on the following libraries:
-* OpenCV ( >= 3.1)
+* OpenCV ( >= 4.10)
 * CMake (>= 2.8)
+* VTK (>= 9.3.1)
+* HDF5 (>= 1.14.4.3)
 
 Build Instructions
 ------------------

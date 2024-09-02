@@ -301,7 +301,7 @@ std::vector<YunLabel> Yun::ccl(cv::Mat &src, cv::Mat &oMap, std::vector<YunOrien
 			//
 			r = h;
 			c = w;
-			rect = cvRect(w, h, 0, 0);
+			rect = cv::Rect(w, h, 0, 0);
 
 			top = 0;
 			++label_id; if (label_id > 255) label_id = 1;
@@ -315,8 +315,8 @@ std::vector<YunLabel> Yun::ccl(cv::Mat &src, cv::Mat &oMap, std::vector<YunOrien
 				{
 					for (int n = c - 1; n <= c + 1; n++)
 					{
-						if ((m < 0) || (m >= imSz.height)) continue;	// height ¹üÀ§ ÇÑÁ¤
-						if ((n < 0) || (n >= imSz.width)) continue;	// width ¹üÀ§ ÇÑÁ¤
+						if ((m < 0) || (m >= imSz.height)) continue;	// height ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+						if ((n < 0) || (n >= imSz.width)) continue;	// width ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 						if (mask.at<uchar>(m, n) != 0 ||
 							src.at<uchar>(m, n) < 128) continue;
@@ -347,7 +347,7 @@ std::vector<YunLabel> Yun::ccl(cv::Mat &src, cv::Mat &oMap, std::vector<YunOrien
 					{
 						YunLabel val;
 
-						val.roi = cvRect(rect.x, rect.y, width, height);
+						val.roi = cv::Rect(rect.x, rect.y, width, height);
 
 						int max_val = 0;
 						int ori = 255;
@@ -400,13 +400,13 @@ std::vector<YunCandidate> Yun::calc_candidate(std::vector<YunLabel> &val, cv::Ma
 			{
 				bool isSave = true;
 
-				cv::Point st = cvPoint(new_tmp.roi.x, new_tmp.roi.y);
-				cv::Point et = cvPoint(new_tmp.roi.x + new_tmp.roi.width, new_tmp.roi.y + new_tmp.roi.height);
+				cv::Point st = cv::Point(new_tmp.roi.x, new_tmp.roi.y);
+				cv::Point et = cv::Point(new_tmp.roi.x + new_tmp.roi.width, new_tmp.roi.y + new_tmp.roi.height);
 
 				for (std::vector<YunCandidate>::iterator rit = result.begin(); rit < result.end(); rit++)
 				{
-					cv::Point rst = cvPoint(rit->roi.x, rit->roi.y);
-					cv::Point ret = cvPoint(rit->roi.x + rit->roi.width, rit->roi.y + rit->roi.height);
+					cv::Point rst = cv::Point(rit->roi.x, rit->roi.y);
+					cv::Point ret = cv::Point(rit->roi.x + rit->roi.width, rit->roi.y + rit->roi.height);
 
 					// compare!
 					//if (new_tmp.roi.contains(rst) || new_tmp.roi.contains(ret) ||
@@ -457,7 +457,7 @@ YunCandidate Yun::sub_candidate(YunLabel val, cv::Mat &mMap, cv::Mat &oMap)
 	cv::Size imSz = mMap.size();
 
 	// center point
-	cv::Point_<double> cPt = cvPoint(roi.x + (roi.width / 2), roi.y + (roi.height / 2));
+	cv::Point_<double> cPt = cv::Point(roi.x + (roi.width / 2), roi.y + (roi.height / 2));
 
 	// check dir
 	double theta;
@@ -545,8 +545,8 @@ YunCandidate Yun::calc_region_check(YunCandidate val, cv::Size imSz)
 
 	int margin = 1;
 
-	cv::Point st = cvPoint(val.roi.x, val.roi.y);
-	cv::Point et = cvPoint(val.roi.x + val.roi.width, val.roi.y + val.roi.height);
+	cv::Point st = cv::Point(val.roi.x, val.roi.y);
+	cv::Point et = cv::Point(val.roi.x + val.roi.width, val.roi.y + val.roi.height);
 
 	// st
 	if (st.y >= val.last_pt.y)        new_val.roi.y = val.last_pt.y - margin;

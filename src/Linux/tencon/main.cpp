@@ -35,13 +35,13 @@ int main(int argc, char* argv[])
 		return -1;
 	}
 
-	cv::cvtColor(frame, frame_gray, CV_BGR2GRAY);
+	cv::cvtColor(frame, frame_gray, cv::COLOR_BGR2GRAY);
 
 	cv::Rect g_rt = mGallo.process(frame_gray, 20);
-	cv::rectangle(frame, g_rt, cvScalar(0, 255, 0), 2);
+	cv::rectangle(frame, g_rt, cv::Scalar(0, 255, 0), 2);
 
 	cv::Rect s_rt = mSoros.process(frame_gray, 20);
-	cv::rectangle(frame, s_rt, cvScalar(255,0,0), 2);
+	cv::rectangle(frame, s_rt, cv::Scalar(255,0,0), 2);
 
 	std::vector<iy::YunCandidate> list_barcode = mYun.process(frame_gray);
 	if (!list_barcode.empty())
@@ -51,7 +51,7 @@ int main(int argc, char* argv[])
 			if (it->isBarcode)
 			{
 				cv::Rect y_rt = it->roi;
-				cv::rectangle(frame, y_rt, cvScalar(0, 255, 255), 2);
+				cv::rectangle(frame, y_rt, cv::Scalar(0, 255, 255), 2);
 			}
 		}
 
